@@ -1,0 +1,146 @@
+<script setup>
+import BreezeAuthenticatedLayout from '@/Layouts/Authenticated.vue';
+import { Head } from '@inertiajs/inertia-vue3';
+</script>
+
+<template>
+    <Head title="Dashboard" />
+
+    <BreezeAuthenticatedLayout>
+        <template #header>
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                Catálogo
+            </h2>
+        </template>
+        <div class="items-center p-5 grid grid-cols-5 gap-5 justify-evenly">
+            <div class="w-full shadow-lg rounded-lg p-5 bg-white text-gray-800" style="max-width: 400px">
+                <div class="w-full flex mb-4">
+                    <div class="overflow-hidden">
+                        <img src="http://cdn.shopify.com/s/files/1/0281/7815/3547/products/card-captor-sakura-kinomoto-red-battle-dress-cosplay-costume-gotamochi-29852756738219.jpg?v=1631364025" alt="">
+                    </div>
+                </div>
+                <div class="w-full flex flex-start">
+                    <p class="text-xl text-gray-800 text-right">Vestido infantil</p>
+                </div>
+                <div class="w-full flex flex-start mb-3">
+                    <p class="text-xs text-gray-500 text-right">2 disponível</p>
+                </div>
+                <div class="btn flex justify-center">
+                    <button class="h-10 w-full px-5 m-2 text-white transition-colors duration-150 bg-orange-400 rounded-lg focus:shadow-outline hover:bg-orange-700">Comprar</button>
+                </div>
+            </div>
+            <div class="w-full shadow-lg rounded-lg p-5 bg-white text-gray-800" style="max-width: 400px">
+                <div class="w-full flex mb-4">
+                    <div class="overflow-hidden">
+                        <img src="http://cdn.shopify.com/s/files/1/0281/7815/3547/products/card-captor-sakura-kinomoto-red-battle-dress-cosplay-costume-gotamochi-29852756738219.jpg?v=1631364025" alt="">
+                    </div>
+                </div>
+                <div class="w-full flex flex-start">
+                    <p class="text-xl text-gray-800 text-right">Vestido infantil</p>
+                </div>
+                <div class="w-full flex flex-start mb-3">
+                    <p class="text-xs text-gray-500 text-right">2 disponível</p>
+                </div>
+                <div class="btn flex justify-center">
+                    <button class="h-10 w-full px-5 m-2 text-white transition-colors duration-150 bg-orange-400 rounded-lg focus:shadow-outline hover:bg-orange-700">Comprar</button>
+                </div>
+            </div>
+            <div class="w-full shadow-lg rounded-lg p-5 bg-white text-gray-800" style="max-width: 400px">
+                <div class="w-full flex mb-4">
+                    <div class="overflow-hidden">
+                        <img src="http://cdn.shopify.com/s/files/1/0281/7815/3547/products/card-captor-sakura-kinomoto-red-battle-dress-cosplay-costume-gotamochi-29852756738219.jpg?v=1631364025" alt="">
+                    </div>
+                </div>
+                <div class="w-full flex flex-start">
+                    <p class="text-xl text-gray-800 text-right">Vestido infantil</p>
+                </div>
+                <div class="w-full flex flex-start mb-3">
+                    <p class="text-xs text-gray-500 text-right">2 disponível</p>
+                </div>
+                <div class="btn flex justify-center">
+                    <button class="h-10 w-full px-5 m-2 text-white transition-colors duration-150 bg-orange-400 rounded-lg focus:shadow-outline hover:bg-orange-700">Comprar</button>
+                </div>
+            </div>
+            <div class="w-full shadow-lg rounded-lg p-5 bg-white text-gray-800" style="max-width: 400px">
+                <div class="w-full flex mb-4">
+                    <div class="overflow-hidden">
+                        <img src="http://cdn.shopify.com/s/files/1/0281/7815/3547/products/card-captor-sakura-kinomoto-red-battle-dress-cosplay-costume-gotamochi-29852756738219.jpg?v=1631364025" alt="">
+                    </div>
+                </div>
+                <div class="w-full flex flex-start">
+                    <p class="text-xl text-gray-800 text-right">Vestido infantil</p>
+                </div>
+                <div class="w-full flex flex-start mb-3">
+                    <p class="text-xs text-gray-500 text-right">2 disponível</p>
+                </div>
+                <div class="btn flex justify-center">
+                    <button class="h-10 w-full px-5 m-2 text-white transition-colors duration-150 bg-orange-400 rounded-lg focus:shadow-outline hover:bg-orange-700">Comprar</button>
+                </div>
+            </div>
+            <div class="w-full shadow-lg rounded-lg p-5 bg-white text-gray-800" style="max-width: 400px">
+                <div class="w-full flex mb-4">
+                    <div class="overflow-hidden">
+                        <img src="http://cdn.shopify.com/s/files/1/0281/7815/3547/products/card-captor-sakura-kinomoto-red-battle-dress-cosplay-costume-gotamochi-29852756738219.jpg?v=1631364025" alt="">
+                    </div>
+                </div>
+                <div class="w-full flex flex-start">
+                    <p class="text-xl text-gray-800 text-right">Vestido infantil</p>
+                </div>
+                <div class="w-full flex flex-start mb-3">
+                    <p class="text-xs text-gray-500 text-right">2 disponível</p>
+                </div>
+                <div class="btn flex justify-center">
+                    <button class="h-10 w-full px-5 m-2 text-white transition-colors duration-150 bg-orange-400 rounded-lg focus:shadow-outline hover:bg-orange-700">Comprar</button>
+                </div>
+            </div>
+            <div class="w-full shadow-lg rounded-lg p-5 bg-white text-gray-800" style="max-width: 400px">
+                <div class="w-full flex mb-4">
+                    <div class="overflow-hidden">
+                        <img src="http://cdn.shopify.com/s/files/1/0281/7815/3547/products/card-captor-sakura-kinomoto-red-battle-dress-cosplay-costume-gotamochi-29852756738219.jpg?v=1631364025" alt="">
+                    </div>
+                </div>
+                <div class="w-full flex flex-start">
+                    <p class="text-xl text-gray-800 text-right">Vestido infantil</p>
+                </div>
+                <div class="w-full flex flex-start mb-3">
+                    <p class="text-xs text-gray-500 text-right">2 disponível</p>
+                </div>
+                <div class="btn flex justify-center">
+                    <button class="h-10 w-full px-5 m-2 text-white transition-colors duration-150 bg-orange-400 rounded-lg focus:shadow-outline hover:bg-orange-700">Comprar</button>
+                </div>
+            </div>
+            <div class="w-full shadow-lg rounded-lg p-5 bg-white text-gray-800" style="max-width: 400px">
+                <div class="w-full flex mb-4">
+                    <div class="overflow-hidden">
+                        <img src="http://cdn.shopify.com/s/files/1/0281/7815/3547/products/card-captor-sakura-kinomoto-red-battle-dress-cosplay-costume-gotamochi-29852756738219.jpg?v=1631364025" alt="">
+                    </div>
+                </div>
+                <div class="w-full flex flex-start">
+                    <p class="text-xl text-gray-800 text-right">Vestido infantil</p>
+                </div>
+                <div class="w-full flex flex-start mb-3">
+                    <p class="text-xs text-gray-500 text-right">2 disponível</p>
+                </div>
+                <div class="btn flex justify-center">
+                    <button class="h-10 w-full px-5 m-2 text-white transition-colors duration-150 bg-orange-400 rounded-lg focus:shadow-outline hover:bg-orange-700">Comprar</button>
+                </div>
+            </div>
+            <div class="w-full shadow-lg rounded-lg p-5 bg-white text-gray-800" style="max-width: 400px">
+                <div class="w-full flex mb-4">
+                    <div class="overflow-hidden">
+                        <img src="http://cdn.shopify.com/s/files/1/0281/7815/3547/products/card-captor-sakura-kinomoto-red-battle-dress-cosplay-costume-gotamochi-29852756738219.jpg?v=1631364025" alt="">
+                    </div>
+                </div>
+                <div class="w-full flex flex-start">
+                    <p class="text-xl text-gray-800 text-right">Vestido infantil</p>
+                </div>
+                <div class="w-full flex flex-start mb-3">
+                    <p class="text-xs text-gray-500 text-right">2 disponível</p>
+                </div>
+                <div class="btn flex justify-center">
+                    <button class="h-10 w-full px-5 m-2 text-white transition-colors duration-150 bg-orange-400 rounded-lg focus:shadow-outline hover:bg-orange-700">Comprar</button>
+                </div>
+            </div>
+        </div>
+    </BreezeAuthenticatedLayout>
+</template>

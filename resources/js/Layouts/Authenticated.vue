@@ -1,4 +1,4 @@
-<script setup>
+<script>
 import { ref } from 'vue';
 import BreezeApplicationLogo from '@/Components/ApplicationLogo.vue';
 import BreezeDropdown from '@/Components/Dropdown.vue';
@@ -6,6 +6,21 @@ import BreezeDropdownLink from '@/Components/DropdownLink.vue';
 import BreezeNavLink from '@/Components/NavLink.vue';
 import BreezeResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
 import { Link } from '@inertiajs/inertia-vue3';
+
+export default {
+    components: {
+        BreezeApplicationLogo,
+        BreezeDropdown,
+        BreezeDropdownLink,
+        BreezeNavLink,
+        BreezeResponsiveNavLink,
+        Link
+    },
+    props: {
+        users: String,
+        canCreateUsers: Boolean,
+    }
+}
 
 const showingNavigationDropdown = ref(false);
 </script>
@@ -30,7 +45,7 @@ const showingNavigationDropdown = ref(false);
                                 <BreezeNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </BreezeNavLink>
-                                <BreezeNavLink :href="route('product-form')" :active="route().current('product-form')">
+                                <BreezeNavLink :href="route('product')" :active="route().current('product')">
                                     +Produtos
                                 </BreezeNavLink>
                                 <BreezeNavLink :href="route('catalog')" :active="route().current('catalog')">
@@ -96,7 +111,7 @@ const showingNavigationDropdown = ref(false);
 
                         <div class="mt-3 space-y-1">
                             <BreezeResponsiveNavLink :href="route('logout')" method="post" as="button">
-                                Log Out
+                                Sair
                             </BreezeResponsiveNavLink>
                         </div>
                     </div>

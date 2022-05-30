@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\ProductController;
+use App\Models\Product;
+use App\Models\User;
 use Illuminate\Foundation\Application;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -28,12 +32,19 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/product-form', function () {
-    return Inertia::render('ProductForm');
-})->middleware(['auth', 'verified'])->name('product-form');
+Route::get('/product', function () {
+    return Inertia::render('ProductForm', [
+        'canCreateUsers' => Auth::user()->can('create', User::class),
+        'users' => User::all()
+    ]);
+})->middleware(['auth', 'verified'])->name('product');
+
+Route::post('/product', [ProductController::class, 'store'])->middleware(['auth', 'verified']);
 
 Route::get('/catalog', function () {
-    return Inertia::render('Catalog');
+    return Inertia::render('Catalog', [
+        'products' => Product::all(),
+    ]);
 })->middleware(['auth', 'verified'])->name('catalog');
 
 Route::get('/about', function () {

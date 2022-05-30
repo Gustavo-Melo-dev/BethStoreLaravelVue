@@ -78,7 +78,7 @@
                            <div>
                               <p  class="text-xl text-orange-400">Email:</p>
                               <div class="text">
-                                  <p>Nosso e-mail de contato para maiores informações. contato@davos.tech</p>
+                                  <p>Nosso e-mail de contato para maiores informações. contato@bethstore.com</p>
                               </div>
                           </div>
                       </div>

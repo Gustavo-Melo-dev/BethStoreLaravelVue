@@ -1,18 +1,3 @@
-<script>
-import BreezeAuthenticatedLayout from '@/Layouts/Authenticated.vue';
-import { Head } from '@inertiajs/inertia-vue3';
-
-export default {
-    components: {
-        BreezeAuthenticatedLayout,
-        Head
-    },
-    props: {
-        products: String
-    }
-}
-</script>
-
 <template>
     <Head title="Dashboard" />
 
@@ -35,10 +20,37 @@ export default {
                 <div class="w-full flex flex-start mb-3">
                     <p class="text-xs text-gray-500 text-right">{{ product.qtd_product }} disponível</p>
                 </div>
-                <div class="btn flex justify-center">
-                    <button class="h-10 w-full px-5 m-2 text-white transition-colors duration-150 bg-orange-400 rounded-lg focus:shadow-outline hover:bg-orange-700">Comprar</button>
+                <div v-if="canCreateUsers" class="btn flex justify-between mr-5">
+                    <div>
+                        <button class="h-10 w-full px-5 m-2 text-white transition-colors duration-150 bg-orange-400 rounded-lg focus:shadow-outline hover:bg-orange-700">Editar</button>
+                    </div>
+                    <div>
+                        <button class="h-10 w-full px-5 m-2 text-white transition-colors duration-150 bg-red-400 rounded-lg focus:shadow-outline hover:bg-red-700">Excluir</button>
+                    </div>
+                </div>
+                <div v-else class="btn flex justify-center">
+                    <Link :href="route('show', product.id)">
+                        <button class="h-10 w-full px-5 m-2 text-white transition-colors duration-150 bg-orange-400 rounded-lg focus:shadow-outline hover:bg-orange-700">Comprar</button>
+                    </Link>
                 </div>
             </div>
         </div>
     </BreezeAuthenticatedLayout>
 </template>
+
+<script>
+import BreezeAuthenticatedLayout from '@/Layouts/Authenticated.vue';
+import { Head, Link } from '@inertiajs/inertia-vue3';
+
+export default {
+    components: {
+        BreezeAuthenticatedLayout,
+        Head,
+        Link
+    },
+    props: {
+        products: String,
+        canCreateUsers: Boolean
+    }
+}
+</script>

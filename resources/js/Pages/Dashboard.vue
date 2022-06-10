@@ -1,12 +1,20 @@
-<script setup>
-import BreezeAuthenticatedLayout from '@/Layouts/Authenticated.vue';
-import { Head } from '@inertiajs/inertia-vue3';
+<script>
+import AppLayout from '@/Layouts/AppLayout.vue';
+import Welcome from '@/Jetstream/Welcome.vue';
+
+export default {
+    components: {
+        AppLayout,
+        Welcome,
+    },
+    props: {
+        message: String
+    }
+}
 </script>
 
 <template>
-    <Head title="Dashboard" />
-
-    <BreezeAuthenticatedLayout>
+    <AppLayout title="Dashboard">
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Dashboard
@@ -15,12 +23,14 @@ import { Head } from '@inertiajs/inertia-vue3';
 
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                    <div class="p-6 bg-white border-b border-gray-200">
-                        You're logged in!
+                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+                    <div class="flex justify-center">
+                        <div v-if="$page.props.flash.message" class="bg-green-500 text-green-800">
+                            {{ $page.props.flash.message }}
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </BreezeAuthenticatedLayout>
+    </AppLayout>
 </template>

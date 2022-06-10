@@ -1,10 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProductController;
-use App\Models\Product;
-use App\Models\User;
 use Illuminate\Foundation\Application;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -28,27 +25,27 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return Inertia::render('Dashboard');
+    })->name('dashboard');
 
-Route::get('/product', function () {
-    return Inertia::render('ProductForm', [
-        'canCreateUsers' => Auth::user()->can('create', User::class),
-        'users' => User::all()
-    ]);
-})->middleware(['auth', 'verified'])->name('product');
+    Route::get('/products', [ProductController::class, 'index'])->name('products.index');
 
-Route::post('/product', [ProductController::class, 'store'])->middleware(['auth', 'verified']);
+    Route::get('/products/{id}', [ProductController::class, 'show'])->name('products.show');
 
-Route::get('/catalog', function () {
-    return Inertia::render('Catalog', [
-        'products' => Product::all(),
-    ]);
-})->middleware(['auth', 'verified'])->name('catalog');
+    Route::get('/create', [ProductController::class, 'create'])->name('products.create');
 
-Route::get('/about', function () {
-    return Inertia::render('About');
-})->middleware(['auth', 'verified'])->name('about');
+    Route::post('/create', [ProductController::class, 'store'])->name('products.store');
 
-require __DIR__.'/auth.php';
+    Route::get('/edit/{id}', [ProductController::class, 'edit'])->name('products.edit');
+
+    Route::patch('/edit/{id}', [ProductController::class, 'update'])->name('products.update');
+
+    Route::delete('/destroy/{product}', [ProductController::class, 'destroy'])->name('products.destroy');
+
+});

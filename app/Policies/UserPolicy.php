@@ -22,4 +22,8 @@ class UserPolicy
     public function create(Authenticatable $user){
         return $user->role === 'admin';
     }
+
+    public function edit(Authenticatable $user){
+        return $user->role === 'admin';
+    }
 }
